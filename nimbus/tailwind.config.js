@@ -6,11 +6,15 @@ module.exports = {
   theme: {
     extend: {
       fonts:{
-        "quick":['Quicksand', 'sans-serif']
+        "quicksand":['Quicksand', 'sans-serif']
       },
       colors:{
-        'primary':['#1A4F81'],
-        'secondary':['#DC9928']
+        'primaria':['#1A4F81'],
+        'secundaria':['#DC9928']
+      },
+      backgroundImage:{
+        'BackImage':('../assets/slide1.png'),
+        'BoxImage1':('../assets/boxImage.png'),
       }
     },
   },
