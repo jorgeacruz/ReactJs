@@ -1,3 +1,4 @@
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -12,10 +13,7 @@ module.exports = {
         'primaria':['#1A4F81'],
         'secundaria':['#DC9928']
       },
-      backgroundImage:{
-        'BackImage':('../assets/slide1.png'),
-        'BoxImage1':('../assets/boxImage.png'),
-      }
+     
     },
   },
   plugins: [],
