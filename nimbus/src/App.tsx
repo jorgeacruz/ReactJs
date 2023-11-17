@@ -37,7 +37,7 @@ const swiper = new Swiper('.swiper', {
 });
 
 
-function App() {
+export default function App() {
   return (
     <body>
       {/* navigation */}
@@ -130,10 +130,10 @@ function App() {
           
           <div className='flex flex-col gap-10 text-white w-full lg:my-auto '>
             <h1 className='text-3xl font-bold md:text-6xl'>Look to find a hire great talent</h1>
-            <p className='text-xl lg:w-3/4'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some </p>
-            <p className='text-xl lg:w-3/4'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some </p>
+            <p className='text-xl lg:w-2/3 font-bold'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some </p>
+            <p className='text-xl lg:w-2/3 font-bold'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some </p>
             <button className='bg-white text-black font-bold p-3 rounded-sm md:w-1/2 hover:bg-secundaria-0 duration-300 hover:scale-95'>
-              Podemos Conversar
+              PODEMOS CONVERSAR
             </button>
           </div>
           {/* Pictures - Team  */}
@@ -156,18 +156,21 @@ function App() {
       <section className='w-full bg-secundaria-0 flex flex-col items-center justify-center md:py-20'>
             <div className='flex flex-col p-6 w-full max-w-7xl md:flex-row'>
               
-            <div className='flex flex-col gap-6 text-black w-full lg:my-auto '>
+            <div className='flex flex-col gap-6 text-black w-full lg:my-20 '>
                 <h1 className='text-3xl font-bold md:text-5xl'>Chronos </h1>
-                <p className='text-xl lg:w-2/3 font-quicksand'>
-                There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some                </p>
-                <p className='text-xl lg:w-2/3 font-quicksand'>
-                There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some                </p>
-                <p className='text-xl lg:w-2/3 font-quicksand'>
-                There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some                </p>
-                <button className='bg-black text-white font-bold p-3 rounded-sm md:w-1/2 hover:bg-secundaria-0 duration-300 hover:scale-95'>
-                  Solicite um orçamento
+                <p className='text-xl lg:w-2/3 font-bold'>
+                Previsão personalizada por área ou região de interesse. Dashboard com diferentes KPI`s.
+                </p>
+                <p className='text-xl lg:w-2/3 font-bold'>
+                Alertas de deslocamento de tempestades em tempo real.
+                </p>
+                <p className='text-xl lg:w-2/3 font-bold'>
+                Dados históricos disponíveis para consulta e rápida exportação para relatórios e laudos.
+                </p>
+                <button className='bg-black text-white font-bold p-3 rounded-sm md:w-1/2 hover:bg-primaria-0 duration-300 hover:scale-95'>
+                  SOLICITE SEU ORÇAMENTO
                 </button>
-              </div>
+            </div>
 
               <div className='flex flex-row'>
                 <img src={require('./assets/tablet.png')} alt="" className='hidden md:block w-[280px] h-[280px] z-10 relative right-20 hover:scale-95 duration-300'/> 
@@ -181,26 +184,58 @@ function App() {
         <div className='w-full max-w-7xl flex flex-col mx-auto p-10'>
           
           <h1 className='text-3xl text-black font-bold mb-12'>Nossos Parceiros</h1>
-          <div className='w-1/2 flex flex-col justify-around p-6'>
-            <img src={require('./assets/cliente.png')} alt="" className='w-40'/>
-            <img src={require('./assets/cliente.png')} alt="" className='w-40'/>
-            <img src={require('./assets/cliente.png')} alt="" className='w-40'/>
-            <img src={require('./assets/cliente.png')} alt="" className='w-40'/>
-            <img src={require('./assets/cliente.png')} alt="" className='w-40'/>
-          </div>
-          <div className='w-1/2 flex flex-col justify-around p-6'>
-            <img src={require('./assets/cliente.png')} alt="" className='w-40'/>
-            <img src={require('./assets/cliente.png')} alt="" className='w-40'/>
-            <img src={require('./assets/cliente.png')} alt="" className='w-40'/>
-            <img src={require('./assets/cliente.png')} alt="" className='w-40'/>
-            <img src={require('./assets/cliente.png')} alt="" className='w-40'/>
-          </div>
-          
 
+          <div className='flex flex-row lg:flex-col lg:gap-10'>
+            <div className='w-1/2 flex flex-col justify-around gap-4 lg:flex-row lg:w-full'>
+              <img src={require('./assets/cliente.png')} alt="" className='w-40'/>
+              <img src={require('./assets/cliente2.png')} alt="" className='w-40'/>
+              <img src={require('./assets/cliente3.png')} alt="" className='w-40'/>
+              <img src={require('./assets/cliente4.png')} alt="" className='w-40'/>
+              <img src={require('./assets/cliente5.png')} alt="" className='w-40'/>
+            </div>
+
+            <div className='w-1/2 flex flex-col justify-around gap-4 lg:flex-row lg:w-full'>
+              <img src={require('./assets/cliente6.png')} alt="" className='w-40'/>
+              <img src={require('./assets/cliente7.png')} alt="" className='w-40'/>
+              <img src={require('./assets/cliente8.png')} alt="" className='w-40'/>
+              <img src={require('./assets/cliente9.png')} alt="" className='w-40'/>
+              <img src={require('./assets/cliente10.png')} alt="" className='w-40'/>
+            </div>
+          </div>
+    
         </div>
       </section>
+
+      {/** Footer */}
+      <footer className='bg-black w-full flex flex-col items-center justify-center p-20'>
+          <div className='w-full max-w-7xl mx-auto text-white border border-white'>
+
+            <div className='w-1/2 flex flex-col gap-4'>
+              <h1>Nimbus</h1>
+              <p>
+              Sistema para gestão de risco climático em canteiro de obras
+              </p>
+            </div>
+
+            <div className='w-1/2 flex flex-col gap-4'>
+              <h1>Nimbus</h1>
+              <p>
+              Sistema para gestão de risco climático em canteiro de obras
+              </p>
+            </div>
+
+            <div className='w-1/2 flex flex-col gap-4'>
+              <h1>Fale Conosco</h1>
+              <p>
+              Sistema para gestão de risco climático em canteiro de obras
+              </p>
+            </div>
+
+          </div>
+      </footer>
+      
     </body>
   );
 }
 
-export default App;
+
