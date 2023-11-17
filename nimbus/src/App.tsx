@@ -1,4 +1,4 @@
-//import slideImage from './assets/slide1.png
+
 import React from 'react';
 import Swiper from 'swiper';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
@@ -40,6 +40,7 @@ const swiper = new Swiper('.swiper', {
 export default function App() {
   return (
     <body>
+  
       {/* navigation */}
       <nav className='w-full flex flex-col items-center justify-center bg-black p-6'>
         <div className='w-full max-w-7xl h-12 flex justify-between items-center'>
@@ -58,7 +59,7 @@ export default function App() {
               english
             </button>
           </div>
-        </div>
+        </div> hover:scale-105 duration-300
       </nav>
 
       <section id='hero' className='w-full h-[600px}'>
@@ -187,19 +188,19 @@ export default function App() {
 
           <div className='flex flex-row lg:flex-col lg:gap-10'>
             <div className='w-1/2 flex flex-col justify-around gap-4 lg:flex-row lg:w-full'>
-              <img src={require('./assets/cliente.png')} alt="" className='w-40'/>
-              <img src={require('./assets/cliente2.png')} alt="" className='w-40'/>
-              <img src={require('./assets/cliente3.png')} alt="" className='w-40'/>
-              <img src={require('./assets/cliente4.png')} alt="" className='w-40'/>
-              <img src={require('./assets/cliente5.png')} alt="" className='w-40'/>
+              <img src={require('./assets/cliente.png')} alt="" className='w-40 hover:scale-105 duration-300'/>
+              <img src={require('./assets/cliente2.png')} alt="" className='w-40 hover:scale-105 duration-300'/>
+              <img src={require('./assets/cliente3.png')} alt="" className='w- hover:scale-105 duration-300'/>
+              <img src={require('./assets/cliente4.png')} alt="" className='w-40 hover:scale-105 duration-300'/>
+              <img src={require('./assets/cliente5.png')} alt="" className='w-40 hover:scale-105 duration-300'/>
             </div>
 
             <div className='w-1/2 flex flex-col justify-around gap-4 lg:flex-row lg:w-full'>
-              <img src={require('./assets/cliente6.png')} alt="" className='w-40'/>
-              <img src={require('./assets/cliente7.png')} alt="" className='w-40'/>
-              <img src={require('./assets/cliente8.png')} alt="" className='w-40'/>
-              <img src={require('./assets/cliente9.png')} alt="" className='w-40'/>
-              <img src={require('./assets/cliente10.png')} alt="" className='w-40'/>
+              <img src={require('./assets/cliente6.png')} alt="" className='w-40 hover:scale-105 duration-300'/>
+              <img src={require('./assets/cliente7.png')} alt="" className='w-40 hover:scale-105 duration-300'/>
+              <img src={require('./assets/cliente8.png')} alt="" className='w-40 hover:scale-105 duration-300'/>
+              <img src={require('./assets/cliente9.png')} alt="" className='w-40 hover:scale-105 duration-300'/>
+              <img src={require('./assets/cliente10.png')} alt="" className='w-40 hover:scale-105 duration-300'/>
             </div>
           </div>
     
@@ -208,32 +209,51 @@ export default function App() {
 
       {/** Footer */}
       <footer className='bg-black w-full flex flex-col items-center justify-center p-20'>
-          <div className='w-full max-w-7xl mx-auto text-white border border-white'>
-
-            <div className='w-1/2 flex flex-col gap-4'>
-              <h1>Nimbus</h1>
-              <p>
-              Sistema para gestão de risco climático em canteiro de obras
+          <div className='w-full max-w-7xl mx-auto text-white flex flex-row justify-between gap-12'>
+            
+            <div className='w-1/2 flex flex-col gap-5'>
+              <h1 className='text-3xl'>Nimbus</h1>
+              <p className='text-lg font-normal w-64'>
+                Sistema para gestão de risco climático em canteiro de obra.
               </p>
+              <div className='flex flex-row gap-6'>
+                <a href="#">Instagram</a><a href="#">Linkedin</a><a href="#">Youtube</a>
+              </div>
             </div>
 
-            <div className='w-1/2 flex flex-col gap-4'>
-              <h1>Nimbus</h1>
-              <p>
-              Sistema para gestão de risco climático em canteiro de obras
+            <div className='w-1/2 flex flex-col gap-5'>
+              <h1 className='text-3xl'>Fale Conosco</h1>
+              <p className='text-lg font-normal w-68'>
+                Horário de atendimento: segunda à sexta,<br/> das 08h as 18h.
               </p>
+              
+              <div>
+                <p>
+                  <a href="tel:21999726009">(21) 99972-6009</a>
+                </p>
+                <p>
+                  <a href="tel:21999726009">(21) 99972-6009</a>
+                </p>
+              </div>
             </div>
 
-            <div className='w-1/2 flex flex-col gap-4'>
-              <h1>Fale Conosco</h1>
-              <p>
-              Sistema para gestão de risco climático em canteiro de obras
-              </p>
+            <div className='w-1/2 '>
+              <form action="" className='flex flex-col gap-3'>
+              <input type="text" placeholder='Digite seu nome' className='p-2 w-full rounded-md bg-transparent border border-white' />
+              <div className='flex flex-row gap-2'>
+              <input type="email" placeholder='E-mail' className='p-2 w-full rounded-md bg-transparent border border-white' />
+              <input type="number" placeholder='Telefone' className='p-2 w-full rounded-md bg-transparent border border-white' />
+              </div>
+              <textarea name="mensagem" id="mensagem" placeholder='Deixe sua mensagem' className='p-4 w-full rounded-md bg-transparent border border-white'></textarea>
+              <button className='bg-white text-black p-4 rounded-md'>
+                enviar
+              </button>
+              </form>
             </div>
-
           </div>
+
+        
       </footer>
-      
     </body>
   );
 }
