@@ -53,13 +53,21 @@ export default function App() {
     gsap.to("#box1",{
       y:0,
       opacity:1,
+      //parameters ScrollTrigger
       scrollTrigger:{
-        trigger:''
+        trigger:"#box-layer",
+        //put mark start / end scroller
+        markers:true,
+        start:"top 600px",
+        end:"bottom 750px",
+        scrub:true
       }
     })
 
-    //unmount 
-    gsap.killTweensOf('#box1');
+    //unmount action
+    return() => {
+      gsap.killTweensOf('#box1')
+    }
 
   },[])
   
@@ -134,13 +142,13 @@ export default function App() {
       </section>
 
       {/* boxes */}
-      <section id='box-layer' className='w-full flex flex-col items-center justify-center py-10'>
+      <section className='w-full flex flex-col items-center justify-center py-10'>
         <div className='w-full p-6 max-w-7xl'>
           <div id='box' className='flex flex-col items-center mb-10 mt-4'>
               <h1 className='text-black text-3xl font-bold md:text-5xl'>
               {t('Diminuir as incertezas gera mais segurança')}</h1>
           </div>
-          <div className='w-full flex flex-col items-center gap-3 md:flex-row'>
+          <div id='box-layer' className='w-full flex flex-col items-center gap-3 md:flex-row'>
             {/* boxes */}
             <div id="box1" className='w-[400px] flex flex-col items-center gap-2 p-3'>
               <img src={require('../src/assets/boxImage.png')} alt="" className='w-[378px] h-[250px] hover:scale-105 duration-300 hover:opacity-80'/>
