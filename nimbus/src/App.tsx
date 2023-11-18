@@ -1,12 +1,13 @@
-
-import React, { useState } from 'react';
+import React, { useState, useLayoutEffect } from 'react';
+// GSAP - animations
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+//lib i18n
 import { useTranslation } from 'react-i18next';
-
+import './lib/i18n'
+// slide Swiper
 import Swiper from 'swiper';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
-
-//lib i18n
-import './lib/i18n'
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -43,6 +44,24 @@ const swiper = new Swiper('.swiper', {
 
 
 export default function App() {
+
+  
+  useLayoutEffect(() => {
+
+    //register plugin
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.to("#box1",{
+      y:0,
+      opacity:1,
+      scrollTrigger:{
+        trigger:''
+      }
+    })
+
+    //unmount 
+    gsap.killTweensOf('#box1');
+
+  },[])
   
   //i18n
   const { t, i18n:{ changeLanguage, language }} = useTranslation()
@@ -104,18 +123,18 @@ export default function App() {
               </div>
               
             </div>
-           {/* <div className="swiper-pagination"></div> 
+           {/* <div className="swiper-pagination"></div> */}
 
             <div className="swiper-button-prev"></div>
             <div className="swiper-button-next"></div>
 
-            <div className="swiper-scrollbar"></div> */}
+           {/* <div className="swiper-scrollbar"></div> */}
           </div>
 
       </section>
 
       {/* boxes */}
-      <section className='w-full flex flex-col items-center justify-center py-10'>
+      <section id='box-layer' className='w-full flex flex-col items-center justify-center py-10'>
         <div className='w-full p-6 max-w-7xl'>
           <div id='box' className='flex flex-col items-center mb-10 mt-4'>
               <h1 className='text-black text-3xl font-bold md:text-5xl'>
@@ -123,7 +142,7 @@ export default function App() {
           </div>
           <div className='w-full flex flex-col items-center gap-3 md:flex-row'>
             {/* boxes */}
-            <div className='w-[400px] flex flex-col items-center gap-2 p-3'>
+            <div id="box1" className='w-[400px] flex flex-col items-center gap-2 p-3'>
               <img src={require('../src/assets/boxImage.png')} alt="" className='w-[378px] h-[250px] hover:scale-105 duration-300 hover:opacity-80'/>
               <h2 className='text-2xl font-bold'>{t('Otimização')}</h2>
               <h3 className='text-md font-bold'>{t('Adequação dos custos ao orçamento')}</h3>
@@ -236,7 +255,7 @@ export default function App() {
 
       {/** Footer */}
       <footer className='bg-black w-full flex flex-col items-center justify-center p-20'>
-          <div className='w-full max-w-7xl mx-auto text-white flex flex-row justify-between gap-12'>
+          <div className='w-full max-w-7xl mx-auto text-white flex flex-col md:flex-row justify-between gap-12'>
             
             <div className='w-1/2 flex flex-col gap-5'>
               <h1 className='text-3xl'>Nimbus</h1>
@@ -248,7 +267,7 @@ export default function App() {
               </div>
             </div>
 
-            <div className='w-1/2 flex flex-col gap-5'>
+            <div className='w-full flex flex-col gap-5 md:flex-col md:w-1/2'>
               <h1 className='text-3xl'>{t('Fale Conosco')}</h1>
               <p className='text-lg font-normal w-68'>
               {t('Atendimento: Segunda à Sexta,')}
@@ -265,7 +284,7 @@ export default function App() {
               </div>
             </div>
 
-            <div className='w-1/2 '>
+            <div className='w-full md:w-1/2'>
               <form action="" className='flex flex-col gap-3'>
               <input type="text" placeholder='Digite seu nome' className='p-2 w-full rounded-md bg-transparent border border-white' />
               <div className='flex flex-row gap-2'>
