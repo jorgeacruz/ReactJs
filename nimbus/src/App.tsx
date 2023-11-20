@@ -1,8 +1,5 @@
-import React, { useState, useLayoutEffect } from 'react';
-// GSAP - animations
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-//lib i18n
+import React, { useState } from 'react';
+
 import { useTranslation } from 'react-i18next';
 import './lib/i18n'
 // slide Swiper
@@ -45,31 +42,6 @@ const swiper = new Swiper('.swiper', {
 
 export default function App() {
 
-  
-  useLayoutEffect(() => {
-
-    //register plugin
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.to("#box1",{
-      y:0,
-      opacity:1,
-      //parameters ScrollTrigger
-      scrollTrigger:{
-        trigger:"#box-layer",
-        //put mark start / end scroller
-        markers:true,
-        start:"top 600px",
-        end:"bottom 750px",
-        scrub:true
-      }
-    })
-
-    //unmount action
-    return() => {
-      gsap.killTweensOf('#box1')
-    }
-
-  },[])
   
   //i18n
   const { t, i18n:{ changeLanguage, language }} = useTranslation()
@@ -115,21 +87,18 @@ export default function App() {
         </div> 
       </nav>
 
-      <section id='hero' className='w-full h-[600px}'>
+      <section id='hero' className='w-full pt-10'>
       {/* Hero Section  */}
 
           <div className="swiper">
             <div className="swiper-wrapper">
               <div className="swiper-slide ">
-              <img src={require('./assets/slide1.png')} alt="" className='w-full lg:h-[800px] bg-cover bg-no-repeat'/>
-              </div>
-              <div className="swiper-slide">
-              <img src={require('./assets/slide1.png')} alt="" className='w-full lg:h-[800px] bg-cover bg-no-repeat'/>
-              </div>
-              <div className="swiper-slide">
-              <img src={require('./assets/slide2.jpg')} alt="" className='w-full lg:h-[800px] bg-cover bg-no-repeat'/>
+                <img src={require('./assets/slide1.png')} alt="" className='w-full lg:h-[700px] bg-cover bg-no-repeat'/>
               </div>
               
+              <div className="swiper-slide">
+                <img src={require('./assets/slide2.jpg')} alt="" className='w-full lg:h-[700px] bg-cover bg-no-repeat'/>
+              </div>    
             </div>
            {/* <div className="swiper-pagination"></div> */}
 
@@ -158,7 +127,7 @@ export default function App() {
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui! Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui!
               </p>
             </div>
-            <div className='w-[400px] flex flex-col items-center gap-2 p-3'>
+            <div id='box2' className='w-[400px] flex flex-col items-center gap-2 p-3'>
               <img src={require('../src/assets/boxImage2.png')} alt="" className='w-[378px] h-[250px] hover:scale-105 duration-300 hover:opacity-80'/>
               <h2 className='text-2xl font-bold'>{t('Economia')}</h2>
               <h3 className='text-md  font-bold'>{t('Planejamento mais produtivo')}</h3>
@@ -166,7 +135,7 @@ export default function App() {
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui! Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui!
               </p>
             </div>
-            <div className='w-[400px] flex flex-col items-center gap-2 p-3'>
+            <div id='box3' className='w-[400px] flex flex-col items-center gap-2 p-3'>
               <img src={require('../src/assets/boxImage3.png')} alt="" className='w-[378px] h-[250px] hover:scale-105 duration-300 hover:opacity-80'/>
               <h2 className='text-2xl font-bold'>{t('Confiança')}</h2>
               <h3 className='text-md font-bold'>{t('Maior eficiência de mitigação dos impactos')}</h3>
