@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { FaFacebook,FaLinkedin, FaTwitter, FaWhatsapp, FaPhone } from 'react-icons/fa'
 import { useTranslation } from 'react-i18next';
 import './lib/i18n'
 // slide Swiper
@@ -9,6 +9,7 @@ import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+
 
 const swiper = new Swiper('.swiper', {
   // configure Swiper to use modules
@@ -57,12 +58,12 @@ export default function App() {
 
   return (
     <body>
-  
-      {/* navigation */}
+
+      {/* navigation   */}
       <nav className='w-full flex flex-col items-center justify-center bg-black p-6 fixed z-30'>
         <div className='w-full max-w-7xl h-12 flex justify-between items-center'>
           <div>
-            {/* logomarca */}
+            {/* logomarca   */}
             <h1 className='text-white font-bold text-lg'>Nimbus Meteorologia</h1>
           </div>
           <div className='hidden md:flex flex-row items-center gap-20'>
@@ -86,7 +87,7 @@ export default function App() {
           </div>
         </div> 
       </nav>
-
+  
       <section id='hero' className='w-full pt-10'>
       {/* Hero Section  */}
 
@@ -240,7 +241,9 @@ export default function App() {
               {t('Sistema para gestão de risco climático em canteiro de obra.')}
               </p>
               <div className='flex flex-row gap-6'>
-                <a href="/#">Instagram</a><a href="/#">Linkedin</a><a href="/#">Youtube</a>
+                <a href="/#"><FaFacebook size={18}/></a>
+                <a href="/#"><FaLinkedin size={18}/></a>
+                <a href="/#"><FaTwitter size={18}/></a>
               </div>
             </div>
 
@@ -252,11 +255,11 @@ export default function App() {
               </p>
               
               <div>
-                <p>
-                  <a href="tel:21999726009">(21) 99972-6009</a>
+                <p className='flex flex-row gap-3 items-center'>
+                  <FaPhone size={18}/> <a href="tel:21999726009">(21) 99972-6009</a>
                 </p>
-                <p>
-                  <a href="tel:21999726009">(21) 99972-6009</a>
+                <p className='flex flex-row gap-3 items-center'>
+                  <FaWhatsapp size={18}/> <a href="tel:21999726009">(21) 99972-6009</a>
                 </p>
               </div>
             </div>
@@ -266,7 +269,7 @@ export default function App() {
               <input type="text" placeholder='Digite seu nome' className='p-2 w-full rounded-md bg-transparent border border-white' />
               <div className='flex flex-row gap-2'>
               <input type="email" placeholder='E-mail' className='p-2 w-full rounded-md bg-transparent border border-white' />
-              <input type="number" placeholder='Telefone' className='p-2 w-full rounded-md bg-transparent border border-white' />
+              <input type="text" placeholder='Telefone' className='p-2 w-full rounded-md bg-transparent border border-white' />
               </div>
               <textarea name="mensagem" id="mensagem" placeholder='Deixe sua mensagem' className='p-4 w-full rounded-md bg-transparent border border-white'></textarea>
               <button className='bg-white text-black p-4 rounded-md'>
