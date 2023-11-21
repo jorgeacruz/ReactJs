@@ -107,6 +107,10 @@ export default function App() {
               </div>
               
               <div className="swiper-slide">
+              <div className='flex flex-col absolute right-[900px] top-[290px] gap-4'>
+                    <h1 className='text-white text-5xl font-Play font-black shadow-sm '>{t('Sistema de Gestão')}<br/>{t('do Risco Climático')}</h1>
+                    <p className='text-white text-2xl font-Lato'>{t('O tempo trabalhando a seu favor')}</p>
+                </div>
                 <img src={require('./assets/slide2.png')} alt="" className='w-full lg:h-[700px] bg-cover bg-no-repeat'/>
               </div>  
             
