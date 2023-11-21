@@ -16,7 +16,7 @@ const swiper = new Swiper('.swiper', {
   modules: [Navigation, Pagination, Autoplay],
 
   autoplay:{
-   delay:6000,
+   delay:3000,
   },
   // Optional parameters
   direction:'horizontal',
@@ -88,25 +88,32 @@ export default function App() {
         </div> 
       </nav>
   
-      <section id='hero' className='w-full pt-10'>
-      {/* Hero Section  */}
-
+    {/* Hero Section  */}
+    <section id='hero' className='w-full pt-10'>
+      
           <div className="swiper">
             <div className="swiper-wrapper">
+             {/** 
               <div className="swiper-slide ">
                 <img src={require('./assets/slide1.png')} alt="" className='w-full lg:h-[700px] bg-cover bg-no-repeat'/>
               </div>
-              
+              */} 
+              <div className="swiper-slide flex flex-col">
+                <img src={require('./assets/slide1.png')} alt="" className='w-full lg:h-[700px] bg-cover bg-no-repeat'/>
+                <h1 className='text-black font-bold'>estou aqui</h1>
+              </div>
               <div className="swiper-slide">
-                <img src={require('./assets/slide2.jpg')} alt="" className='w-full lg:h-[700px] bg-cover bg-no-repeat'/>
-              </div>    
+                <img src={require('./assets/slide1.png')} alt="" className='w-full lg:h-[700px] bg-cover bg-no-repeat'/>
+                <h1 className='text-black font-bold'>estou aqui</h1>
+              </div>  
+
             </div>
-           {/* <div className="swiper-pagination"></div> */}
+           <div className="swiper-pagination"></div> 
 
             <div className="swiper-button-prev"></div>
             <div className="swiper-button-next"></div>
 
-           {/* <div className="swiper-scrollbar"></div> */}
+           <div className="swiper-scrollbar"></div> 
           </div>
 
       </section>
