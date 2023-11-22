@@ -6,8 +6,9 @@ module.exports = {
   ],
   theme: {
     extend: {
-      fonts:{
-        "quicksand":['Quicksand', 'sans-serif']
+      fontFamily:{
+        "Lato":['Lato'],
+        "Play":['Playfair Display']
       },
       colors:{
         'primaria':['#1A4F81'],
