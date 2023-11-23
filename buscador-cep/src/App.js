@@ -61,9 +61,6 @@ function App() {
             <p>{zip.logradouro}</p>
             <p>{zip.bairro} | {zip.localidade} | {zip.uf}</p> 
             
-            <button onClick={limpaCampo}>
-              Limpar
-            </button>
           </div>
         )}
         
