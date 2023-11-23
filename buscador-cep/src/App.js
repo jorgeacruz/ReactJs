@@ -48,9 +48,9 @@ function App() {
         </button>
 
         <div className='w-full max-w-sm flex flex-col items-center gap-4 py-8 mt-10 bg-Secondary text-white rounded-lg'>
-          <h1 className="text-2xl font-bold"></h1>
-          <p>endereço</p>
-          <p>Ramos - Rio de Janeiro</p>
+          <h1 className="text-2xl font-bold">{zip.cep}</h1>
+          <p>{zip.logradouro}</p>
+          <p>{zip.bairro} | {zip.localidade} | {zip.uf}</p>
 
         </div>
       </div>
