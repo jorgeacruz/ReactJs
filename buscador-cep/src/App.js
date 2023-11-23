@@ -12,6 +12,7 @@ function App() {
   //armazena dados a api - Object
   const [zip, setZip] = useState({})
 
+
   async function handleClick(){
    
     if(input === ""){
@@ -36,6 +37,12 @@ function App() {
     
   }
 
+  function limpaCampo(){
+    if(Object.keys(zip.length > 0 )){
+      <div></div>
+    }
+  }
+
   return (
     <div className="w-full h-screen flex items-center justify-center mx-auto bg-Primary">
       <div className='w-full max-w-4xl flex flex-col items-center gap-3 '>
@@ -47,12 +54,19 @@ function App() {
           Pesquisar Cep
         </button>
 
-        <div className='w-full max-w-sm flex flex-col items-center gap-4 py-8 mt-10 bg-Secondary text-white rounded-lg'>
-          <h1 className="text-2xl font-bold"></h1>
-          <p>endereço</p>
-          <p>Ramos - Rio de Janeiro</p>
-
-        </div>
+        {/** Renderiza condicional  */}
+        {Object.keys(zip).length > 0 && (
+          <div className='w-full max-w-sm flex flex-col items-center gap-4 py-8 mt-10 bg-Secondary text-white rounded-lg'>
+            <h1 className="text-2xl font-bold">{zip.cep}</h1>
+            <p>{zip.logradouro}</p>
+            <p>{zip.bairro} | {zip.localidade} | {zip.uf}</p> 
+            
+            <button onClick={limpaCampo}>
+              Limpar
+            </button>
+          </div>
+        )}
+        
       </div>
       {/** Props Toastify */}
       <ToastContainer
