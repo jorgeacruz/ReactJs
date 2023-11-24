@@ -1,13 +1,13 @@
 const data = [
   {
-    question: "O que é Vanilla JavaScript?",
+    question: "Qual o verdadeiro nome de B.B. King",
     options: [
-      "JavaScript puro",
-      "Uma biblioteca JavaScript",
-      "Um framework JavaScript",
-      "Um compilador de JavaScript",
+      "Bill Bernard King",
+      "Riley B. King",
+      "Raymond Bernard King",
+      "Big Bill the King",
     ],
-    answer: "JavaScript puro",
+    answer: "Riley B. King",
   },
   {
     question: "Com qual instrução declaramos uma constante em JavaScript?",
