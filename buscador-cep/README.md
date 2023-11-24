@@ -1,13 +1,13 @@
-# Zip code search
+git # Zip code search
 
-### This an simple React App to search zip code using api.
+## This an simple React App to search zip code using api.
 
 ### Lib's
 - Toastify
 - React Icons
 - Axios
 
-## Link
+### Link
 <a href="https://search-zip.netlify.app/">Here</a>
 
 ### API ViaCep
