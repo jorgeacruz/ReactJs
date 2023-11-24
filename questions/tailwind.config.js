@@ -4,8 +4,12 @@ module.exports = {
   theme: {
     extend: {
       colors:{
-        "Primary":"#fff",
-        "Secondary":"#000"
+        "Primary":"#151515",
+        "Secondary":"#5C0459",
+
+      },
+      fontFamily:{
+        "Raleway":["Raleway","sans-serif"],
       }
     },
   },
