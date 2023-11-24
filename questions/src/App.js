@@ -1,6 +1,11 @@
 import React, { useState } from "react";
+import { useContext } from "react";
+import { QuizContext } from "./context/quiz";
 
 export default function App() {
+
+  const quizState = useContext(QuizContext);
+  console.log(quizState);
 
   const [name, setName] = useState();
 
