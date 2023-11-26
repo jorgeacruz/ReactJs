@@ -16,3 +16,4 @@
 </p>
 
 ### Click here to access <a href="https://strava-from-emailjs.netlify.app"> Project Link</a>
+### Front-End: Jorge Cruz
