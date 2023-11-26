@@ -23,7 +23,7 @@ export default function App() {
     })
   }
 
-  // build QrCode Dinamic
+  // build QrCode realtime
   function handleQRcode(e){ 
 
     setLink(e.target.value);
@@ -34,15 +34,15 @@ export default function App() {
   return (
     <div className="w-full h-screen bg-gradient-to-tr from-blue-600 to-blue-950 flex items-center justify-center mx-auto">
       <div className='p-10 w-full max-w-md h-[700px] bg-slate-400 rounded-2xl shadow-black-500 shadow-md flex flex-col items-center justify-center gap-3 '>
-        <h1 className='text-black text-2xl font-bold'>QRCODE Generator</h1>
+        <h1 className='text-black text-2xl font-bold'>Crie aqui seu QR Code!</h1>
         <input type='text' 
         className=' text-center p-2 border border-black bg-white rounded-md w-2/3'
-        placeholder='Digite aqui e Crie seu QR Code!'
+        placeholder='Digite aqui e pronto'
         value={link}
         onChange={(e) => setLink(e.target.value)}/>
-        <QRCode value={link} className='hover:scale-105 duration-300 my-3' />
-        <a href={qrcodeLink} download={`qrcode.jpg`}  
-        className=' text-center p-2 bg-black text-white w-2/3 rounded-md hover:bg-blue-900 duration-300'
+        <QRCode value={link} className='rounded-lg hover:scale-105 duration-300 my-3' />
+        <a href={qrcodeLink} download={``}  
+        className=' text-center font-bold p-2 bg-black text-white w-2/3 rounded-md hover:bg-red-500 duration-300'
         >
             Fazer Download 
         </a>
