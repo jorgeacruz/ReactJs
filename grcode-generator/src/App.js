@@ -41,7 +41,7 @@ export default function App() {
         value={link}
         onChange={(e) => setLink(e.target.value)}/>
         <QRCode value={link} className='rounded-lg hover:scale-105 duration-300 my-3' />
-        <a href={qrcodeLink} download={``}  
+        <a href={qrcodeLink} download={`qrcode.png`}  
         className=' text-center font-bold p-2 bg-black text-white w-2/3 rounded-md hover:bg-red-500 duration-300'
         >
             Fazer Download 
