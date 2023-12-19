@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
+//React Icons
 import { FaFacebook,FaLinkedin, FaTwitter, FaWhatsapp, FaPhone } from 'react-icons/fa'
+//International
 import { useTranslation } from 'react-i18next';
 import './lib/i18n'
+
 // slide Swiper
 import Swiper from 'swiper';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
@@ -42,6 +45,11 @@ const swiper = new Swiper('.swiper', {
 
 
 export default function App() {
+  
+  //setting Dark Mode Class
+  function toogleDark(){
+    document.documentElement.classList.toggle("dark")
+  }
 
   
   //i18n
@@ -60,11 +68,11 @@ export default function App() {
     <body>
 
       {/* navigation   */}
-      <nav className='w-full flex flex-col items-center justify-center bg-black p-6 fixed z-30'>
+      <nav className='w-full flex flex-col items-center justify-center bg-black p-6 fixed z-30 dark:bg-white'>
         <div className='w-full max-w-7xl h-12 flex justify-between items-center'>
           <div>
             {/* logomarca   */}
-            <h1 className='text-white font-bold text-lg'>Nimbus Meteorologia</h1>
+            <h1 className='text-white font-bold text-lg dark:text-black'>Nimbus Meteorologia</h1>
           </div>
           <div className='hidden md:flex flex-row items-center gap-20'>
             <ul className="flex flex-row text-white gap-8">
@@ -83,6 +91,9 @@ export default function App() {
             </ul>
             <button type="button" onClick={handleChangeLanguage} className='bg-white p-2 flex items-center justify-center rounded-sm w-40 hover:bg-secundaria-0 duration-300 hover:scale-95'>
             {t('English')}
+            </button>
+            <button className='bg-red-400 p-2' onClick={toogleDark}>
+              DarkMode
             </button>
           </div>
         </div> 
