@@ -1,16 +1,21 @@
 import { useState } from 'react';
+//toastify
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+// styles
 import './App.css';
 
 // add EmailJs Service
 import emailjs from '@emailjs/browser'
 
 function App() {
+
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [telefone, setTelefone] = useState('')
   const [senha, setSenha] = useState('')
+
+  const [isShown, setIsSHown] = useState(false);
 
   function sendEmail(e){
     e.preventDefault();
@@ -40,7 +45,8 @@ function App() {
       setTelefone('');
       setSenha('');
     }, (err) => {
-      console.log('ERRO: ', err)
+      console.log('ERRO: ', err);
+      toast.error('Erro ao enviar');
     })
   }
 
@@ -61,7 +67,7 @@ function App() {
         <input 
           className='w-full text-center rounded-lg border border-black p-2'
           type="text"
-          placeholder="Digite seu nome"
+          placeholder="Digite seu nome e sobrenome"
           onChange={(e) => setName(e.target.value)}
           value={name}
         />
@@ -69,26 +75,26 @@ function App() {
         <input 
           className='w-full text-center rounded-lg border border-black p-2'
           type="text"
-          placeholder="Digite seu email"
+          placeholder="Digite seu melhor email"
           onChange={(e) => setEmail(e.target.value)}
           value={email}
         />
         <input 
           className='w-full text-center  rounded-lg border border-black p-2'
           type="text"
-          placeholder="Deixe seu contato"
+          placeholder="Deixe seu contato telefônico"
           onChange={(e) => setTelefone(e.target.value)}
           value={telefone}
         />
         <input 
           className='w-full text-center rounded-lg border border-black p-2'
-          type="text"
+          type="password"
           placeholder="Cadastre sua senha"
-          
+          autoComplete="current-password"
           onChange={(e) => setSenha(e.target.value)}
           value={senha}
         />
-
+    
         
         <button className='w-full bg-[#fc4c02] p-2 rounded-lg text-white font-bold hover:bg-black duration-300' >
           Registrar minha Conta Strava
