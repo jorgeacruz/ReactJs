@@ -15,7 +15,8 @@ function App() {
   function sendEmail(e){
     e.preventDefault();
     if(name === '' || email === '' || telefone === '' || senha === ''){
-      toast('Preencha todos os campos')
+      toast('Preencha todos os campos');
+      return;
     } 
 
     // template Params
