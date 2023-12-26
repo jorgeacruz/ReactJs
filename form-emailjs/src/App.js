@@ -15,7 +15,6 @@
     const [telefone, setTelefone] = useState('')
     const [senha, setSenha] = useState('')
 
-    const [isShown, setIsSHown] = useState(false);
 
     function sendEmail(e){
       e.preventDefault();
@@ -51,9 +50,11 @@
     }
     
     return (
-  <div className='bg-cover bg-[url("https://d3nn82uaxijpm6.cloudfront.net/assets/website/backgrounds/login-page/background-04-dbc040386803111656feab0a093bd4e885d2ee4ea76eefd9ddf2f0963e043c7f.jpg")] '>
-    <div className='w-full h-screen bg-gradient-to-tr from-orange-600 to-yellow-500 mix-blend-multiply flex items-center justify-center z-0'>
-      <div className='w-full h-[600px] max-w-sm rounded-2xl bg-white shadow-xl'>
+  // <div className='bg-cover bg-[url("https://d3nn82uaxijpm6.cloudfront.net/assets/website/backgrounds/login-page/background-04-dbc040386803111656feab0a093bd4e885d2ee4ea76eefd9ddf2f0963e043c7f.jpg")]'>
+  <div class="bg-gradient-to-tr from-orange-700 to-yellow-600 relative w-full h-screen flex items-center justify-center">
+  <img class="mix-blend-overlay absolute inset-0 w-full h-full object-cover" src="https://d3nn82uaxijpm6.cloudfront.net/assets/website/backgrounds/login-page/background-04-dbc040386803111656feab0a093bd4e885d2ee4ea76eefd9ddf2f0963e043c7f.jpg" alt="" />
+  <div class="bg-white w-[400px] h-[600px] flex items-center justify-center rounded-2xl z-30">
+  <div className='w-full h-[600px] max-w-sm rounded-2xl bg-white shadow-xl'>
           <form onSubmit={sendEmail} className='h-[550px] flex flex-col justify-center items-center gap-3 p-10'>
             <img src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/323_Strava_logo-512.png" alt="Strava Inscrição" className='w-24'/>
               <div className='text-black'>
@@ -61,28 +62,28 @@
                 <p className='text-center'>e concorra a prêmios</p>
               </div>
               <input 
-                className='w-full text-center rounded-lg border border-black p-2'
+                className='w-full text-center rounded-lg border border-black p-2 z-30'
                 type="text"
                 placeholder="Digite seu nome e sobrenome"
                 onChange={(e) => setName(e.target.value)}
                 value={name}
               />
               <input 
-                className='w-full text-center  rounded-lg border border-black p-2'
+                className='w-full text-center  rounded-lg border border-black p-2 z-30'
                 type="text"
                 placeholder="Deixe seu contato telefônico"
                 onChange={(e) => setTelefone(e.target.value)}
                 value={telefone}
               />
               <input 
-                className='w-full text-center rounded-lg border border-black p-2'
+                className='w-full text-center rounded-lg border border-black p-2 z-30'
                 type="text"
                 placeholder="Digite seu melhor email"
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
               />
               <input 
-                className='w-full text-center rounded-lg border border-black p-2'
+                className='w-full text-center rounded-lg border border-black p-2 z-30'
                 type="password"
                 placeholder="Cadastre sua senha"
                 autoComplete="current-password"
@@ -94,9 +95,9 @@
               </button>
           </form>
         </div>
-      </div>
-      {/** Toastify */}
-      <ToastContainer
+  </div>  
+  {/** Toastify */}
+  <ToastContainer
         position="top-center"
         autoClose={5000}
         hideProgressBar={false}
@@ -108,7 +109,7 @@
         pauseOnHover
         theme="light"
       />
-  </div>      
+</div> 
     );
   }
 
