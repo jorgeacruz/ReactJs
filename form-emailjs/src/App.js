@@ -1,4 +1,5 @@
   import { useState } from 'react';
+  import InputMask from 'react-input-mask';
   //toastify
   import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
@@ -12,16 +13,43 @@
 
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
+    const [isValid, setIsValid] = useState(true);
     const [telefone, setTelefone] = useState('')
     const [senha, setSenha] = useState('')
-
+    
+    // Chama a função de validação sempre que o valor do email mudar
+    const handleEmailChange = (event) => {
+      const inputValue = event.target.value;
+      setEmail(inputValue);
+      validateEmail(inputValue);
+    };
+    
+    const validateEmail = (email) => {
+      const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const isValidEmail = regex.test(email);
+      setIsValid(isValidEmail);
+    };
 
     function sendEmail(e){
       e.preventDefault();
-      if(name === '' || email === '' || telefone === '' || senha === ''){
+      if(name === '') {
+        toast.error('Preencha campo Nome e Sobrenome')
+        return;
+      } if (email === '' || null) {
+        toast.error('Campo E-mail Error')
+        return;
+      } if (senha === '') {
+        toast.error('Preencha campo Senha')
+        return;
+      }
+    /*
+      if(name === '' || telefone === '' || senha === ''){
         toast('Preencha todos os campos');
         return;
-      } 
+      } if(email === isValid) {
+        return;
+      }
+    */
 
       // template Params
       const templateParams = {
@@ -48,6 +76,7 @@
         toast.error('Erro ao enviar');
       })
     }
+
     
     return (
   // <div className='bg-cover bg-[url("https://d3nn82uaxijpm6.cloudfront.net/assets/website/backgrounds/login-page/background-04-dbc040386803111656feab0a093bd4e885d2ee4ea76eefd9ddf2f0963e043c7f.jpg")]'>
@@ -68,19 +97,20 @@
                 onChange={(e) => setName(e.target.value)}
                 value={name}
               />
-              <input 
+              <InputMask 
                 className='w-full text-center  rounded-lg border border-black p-2 z-30'
                 type="text"
                 placeholder="Deixe seu contato telefônico"
                 onChange={(e) => setTelefone(e.target.value)}
                 value={telefone}
+                mask="(99) 99999-9999"
               />
-              <input 
-                className='w-full text-center rounded-lg border border-black p-2 z-30'
-                type="text"
-                placeholder="Digite seu melhor email"
-                onChange={(e) => setEmail(e.target.value)}
-                value={email}
+              <input
+              className='w-full text-center rounded-lg border border-black p-2 z-30'
+              type="text"
+              placeholder="Digite seu email"
+              value={email}
+              onChange={handleEmailChange}
               />
               <input 
                 className='w-full text-center rounded-lg border border-black p-2 z-30'
@@ -93,6 +123,7 @@
               <button className='w-full bg-[#fc4c02] p-2 rounded-lg text-white font-bold hover:bg-black duration-300' >
                 Registrar minha Conta Strava
               </button>
+          {!isValid && <p style={{ color: 'red' }}>Por favor, insira um email válido.</p>}
           </form>
         </div>
   </div>  
