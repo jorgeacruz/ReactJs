@@ -1,16 +1,14 @@
-git # Zip code search
-
+# Buscador de Cep 
 ## This an simple React App to search zip code using api.
+<img src="./src/img/screen.png">
+
+### API ViaCep
+<a href="https://viacep.com.br">Documentation</a>
 
 ### Lib's
 - Toastify
 - React Icons
 - Axios
-
-### API ViaCep
-<a href="https://viacep.com.br">Documentation</a>
-
-<img src="./src/img/screen.png">
 
 ### Click here to access <a href="https://search-zip.netlify.app/"> Project Link</a>
 
